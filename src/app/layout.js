@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import { Bricolage_Grotesque } from 'next/font/google'
 
 const bricolage = Bricolage_Grotesque({
