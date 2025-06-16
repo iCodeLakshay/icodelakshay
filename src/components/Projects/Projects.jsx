@@ -12,27 +12,27 @@ const projects = {
     {
       title: "Samvaad",
       description: "Real-time chat application with group chats and direct messaging",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/samvaad.png",
       tags: ["MERN", "Socket.io", "Zustand"],
-      demoLink: "#",
+      demoLink: "https://samvaad-frontend.onrender.com",
       githubLink: "#",
     },
   ],
   frontend: [
     {
-      title: "CryptoFlux",
+      title: "Crypto Flux",
       description: "Cryptocurrency tracking platform with real-time price updates",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/cryptoflux.png",
       tags: ["Next.js", "Radix UI", "Zustand", "Coingecko API"],
-      demoLink: "#",
+      demoLink: "https://crypto-flux-lime.vercel.app/",
       githubLink: "#",
     },
     {
       title: "Movie Recommendation",
       description: "Movie recommendation site with personalized suggestions",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React.js", "TMDB API", "Tailwind CSS"],
-      demoLink: "#",
+      image: "/movieSS.png",
+      tags: ["React.js", "TMDB API"],
+      demoLink: "https://movie-site-react-one.vercel.app/",
       githubLink: "#",
     },
   ],
@@ -44,17 +44,6 @@ const projects = {
       tags: ["Java", "Spring Boot", "JWT"],
       demoLink: "#",
       githubLink: "#",
-    },
-  ],
-  upcoming: [
-    {
-      title: "Quizopia",
-      description: "Cafe Quiz App with real-time multiplayer functionality",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["Next.js", "Socket.io", "MongoDB", "Express"],
-      demoLink: "#",
-      githubLink: "#",
-      upcoming: true,
     },
   ],
 }
@@ -119,12 +108,6 @@ export default function Projects() {
               >
                 Backend
               </button>
-              <button 
-                className={`inline-flex text-gray-300 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === 'upcoming' ? 'bg-[#6826ce] text-black shadow-sm' : ''}`}
-                data-value="upcoming"
-              >
-                Upcoming
-              </button>
             </div>
           </div>
 
@@ -141,7 +124,7 @@ export default function Projects() {
                   <motion.div
                     key={index}
                     variants={item}
-                    className="project-card group relative overflow-hidden rounded-lg border shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="project-card group w-xs mx-auto lg:w-auto relative overflow-hidden rounded-lg border shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-70 transition-opacity z-10" />
@@ -149,7 +132,7 @@ export default function Projects() {
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-fill transition-transform duration-500 group-hover:scale-110"
                   />
                   {project.upcoming && (
                     <div className="absolute top-2 right-2 bg-[#6826ce] text-white text-xs font-medium px-2 py-1 rounded-full z-20">
@@ -158,8 +141,8 @@ export default function Projects() {
                   )}
                 </div>
 
-                <div className="p-6 bg-white/10 backdrop-blur-md border border-white/20">
-                  <h3 className="text-xl text-gray-50 font-semibold mb-2">{project.title}</h3>
+                <div className="p-6 h-auto bg-white/10 backdrop-blur-md border border-white/20">
+                  <h3 className="font-[Bricolage_Grotesque] text-xl text-gray-50 font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-300  text-sm mb-4 leading-relaxed">{project.description}</p>
 
                   <div className="flex  flex-wrap gap-2 mb-4">
@@ -171,7 +154,7 @@ export default function Projects() {
                   </div>
 
                   <div className="flex gap-3 text-gray-50">
-                    <Link href={project.demoLink} className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
+                    <Link href={project.demoLink} target="_blank" className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
                       Demo 
                       <HiArrowUpRight className="ml-1 h-3 w-3" /> 
                     </Link>

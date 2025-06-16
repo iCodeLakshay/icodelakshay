@@ -43,13 +43,13 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                         <HireMeButton size="sm" />
-                        <button
+                        {/* <button
                             onClick={toggleMobileMenu}
                             className="p-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
                             aria-label="Toggle menu"
                         >
                             {isMobileMenuOpen ? <HiX size={20} /> : <HiMenu size={20} />}
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
