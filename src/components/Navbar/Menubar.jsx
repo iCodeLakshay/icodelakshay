@@ -4,16 +4,17 @@ import { IoRocket } from "react-icons/io5"; // Project
 import { FaCircleInfo } from "react-icons/fa6"; //About
 import { FaMedal } from "react-icons/fa"; // Experience
 import { TbTimeline } from "react-icons/tb"; // Timeline
+import Link from 'next/link';
 
 const Menubar = ({ isMobile = false, onItemClick }) => {
     const [activeItem, setActiveItem] = useState('home');
 
     const navItems = [
-        { id: 'home', icon: GoHomeFill, label: 'Home', href: '' },
-        { id: 'settings', icon: IoRocket, label: 'Project', href: '' },
-        { id: 'profile', icon: FaCircleInfo, label: 'About', href: '' },
-        { id: 'notifications', icon: FaMedal, label: 'Experience', href: '' },
-        { id: 'favorites', icon: TbTimeline, label: 'Timeline', href: '' },
+        { id: 'home', icon: GoHomeFill, label: 'Home', href: '#home' },
+        { id: 'project', icon: IoRocket, label: 'Project', href: '#project' },
+        { id: 'about', icon: FaCircleInfo, label: 'About', href: '#about' },
+        { id: 'experience', icon: FaMedal, label: 'Experience', href: '#experience' },
+        { id: 'timeline', icon: TbTimeline, label: 'Timeline', href: '#timeline' },
     ];
 
     const handleItemClick = (itemId) => {
@@ -38,8 +39,10 @@ const Menubar = ({ isMobile = false, onItemClick }) => {
                                     : 'text-gray-300 hover:text-white hover:bg-gray-700'
                             }`}
                         >
+                            <Link href={item.href}>
                             <Icon size={20} />
                             <span className="font-medium">{item.label}</span>
+                            </Link>
                         </button>
                     );
                 })}
@@ -56,6 +59,7 @@ const Menubar = ({ isMobile = false, onItemClick }) => {
                         const isActive = activeItem === item.id;
 
                         return (
+                            <Link key={item.id} href={item.href} scroll={true}>
                             <button
                                 key={item.id}
                                 onClick={() => setActiveItem(item.id)}
@@ -78,6 +82,7 @@ const Menubar = ({ isMobile = false, onItemClick }) => {
                                     {item.label}
                                 </div>
                             </button>
+                            </Link>
                         );
                     })}
                 </div>

@@ -104,14 +104,13 @@ const programmingLanguages = [
   }
 ];
 
-// Easy configuration - modify these values to customize the component
 const CONFIG = {
   animationDuration: '30s', // Speed of the marquee
-  cardSize: 'w-32 h-32', // Size of each tech card
-  logoSize: 'w-20 h-20', // Size of the logo inside each card
+  cardSize: 'size-27 lg:size-32', // Size of each tech card
+  logoSize: 'size-12 lg:size-20', // Size of the logo inside each card
   gap: 'gap-4', // Space between cards
-  backgroundColor: 'bg-gray-100', // Background color
-  fadeWidth: 'w-1/6' // Width of the fade effect on sides
+  backgroundColor: 'bg-transparent', // Background color
+  fadeWidth: 'w-1/9' // Width of the fade effect on sides
 };
 
 const firstRow = programmingLanguages.slice(0, Math.ceil(programmingLanguages.length / 2));
@@ -120,7 +119,7 @@ const secondRow = programmingLanguages.slice(Math.ceil(programmingLanguages.leng
 const LanguageCard = ({ logo, name, alt }) => {
   return (
     <div className={`flex-shrink-0 ${CONFIG.cardSize} cursor-pointer overflow-hidden rounded-xl border p-4 mx-4
-      border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]
+      bg-gray-500/10 border-gray-400 hover:bg-gray-600/40
       dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]
       transition-colors duration-200`}>
       <div className="flex flex-col items-center justify-center h-full">
@@ -131,7 +130,7 @@ const LanguageCard = ({ logo, name, alt }) => {
             className="w-full h-full object-contain"
           />
         </div>
-        <div className="text-sm font-medium dark:text-white text-center mt-2">
+        <div className="text-sm font-medium text-white text-center mt-2">
           {name}
         </div>
       </div>
@@ -189,8 +188,8 @@ export default function TechStackMarquee() {
       <MarqueeRow items={secondRow} reverse />
 
       {/* Fade effects on sides */}
-      <div className={`pointer-events-none absolute inset-y-0 left-0 ${CONFIG.fadeWidth} bg-gradient-to-r from-gray-100 to-transparent dark:from-gray-950`}></div>
-      <div className={`pointer-events-none absolute inset-y-0 right-0 ${CONFIG.fadeWidth} bg-gradient-to-l from-gray-100 to-transparent dark:from-gray-950`}></div>
+      <div className={`pointer-events-none absolute inset-y-0 left-0 ${CONFIG.fadeWidth} bg-gradient-to-r from-black/40 to-transparent dark:from-gray-950`}></div>
+      <div className={`pointer-events-none absolute inset-y-0 right-0 ${CONFIG.fadeWidth} bg-gradient-to-l from-black/40 to-transparent dark:from-gray-950`}></div>
     </div>
   );
 }

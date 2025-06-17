@@ -6,7 +6,7 @@ import Earth from './Globe/Globe';
 
 const HeroContent = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
+        <div id='home' className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
             <div className="flex flex-col justify-center mt-25 lg:mt-0 px-8 lg:ml-auto lg:px-8">
                 <div className="max-w-lg">
                     <h3 className='font-[Bricolage_Grotesque] text-2xl lg:text-3xl text-gray-300 font-semibold'>Hello Folks, this is</h3>

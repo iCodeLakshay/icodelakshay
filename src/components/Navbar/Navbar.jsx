@@ -3,14 +3,13 @@ import React, { useState } from 'react'
 import HireMeButton from './HireMeButton'
 import Menubar from './Menubar'
 import Image from 'next/image'
-import { HiMenu, HiX } from "react-icons/hi";
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+    // const toggleMobileMenu = () => {
+    //     setIsMobileMenuOpen(!isMobileMenuOpen);
+    // };
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);

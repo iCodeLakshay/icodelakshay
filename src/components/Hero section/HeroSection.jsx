@@ -4,7 +4,7 @@ import HeroContent from './HeroContent'
 
 const HeroSection = () => {
   return (
-    <div id='home' className='relative min-h-screen w-full'>
+    <div className='relative min-h-screen w-full'>
       <HeroSectionBG />
       <div className='relative z-10'>
         <HeroContent />
