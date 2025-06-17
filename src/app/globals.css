@@ -4,9 +4,16 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
 html{
    scroll-behavior: smooth;
 }
+
+.p-card-body{
+  background: #151515;
+  backdrop-filter: blur(12px);
+}
+
 :root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

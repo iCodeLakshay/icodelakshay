@@ -2,6 +2,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Bricolage_Grotesque } from 'next/font/google'
+import { PrimeReactProvider } from 'primereact/api';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -32,7 +37,9 @@ export default function RootLayout({ children }) {
         className={`${bricolage.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <PrimeReactProvider>
+          {children}
+        </PrimeReactProvider>
       </body>
     </html>
   );

@@ -83,7 +83,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-8"
         >
-          <h2 className="font-[Bricolage_Grotesque] text-3xl w-fit mx-auto font-bold text-white tracking-tighter px-4 py-2 bg-black rounded-2xl mb-4">Projects</h2>
+          <h2 className="font-[Bricolage_Grotesque] text-3xl w-fit mx-auto font-bold text-white tracking-tighter px-4 py-2 bg-[#6826ce] rounded-2xl mb-4">Projects</h2>
           <p className="text-lg text-muted-foreground text-gray-300">Explore my work across different domains and technologies</p>
         </motion.div>
 
