@@ -1,5 +1,6 @@
 import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
+import Footer from "@/components/Footer/Footer";
 import HeroSection from "@/components/Hero section/HeroSection";
 import Projects from "@/components/Projects/Projects";
 import Journey from "@/components/Timeline/Journey";
@@ -22,6 +23,7 @@ export default function Home() {
       <section id="timeline" className="scroll-mt-4">
         <Journey />
       </section>
+      <Footer />
     </main>
   );
 }
