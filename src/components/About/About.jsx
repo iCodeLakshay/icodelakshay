@@ -10,7 +10,7 @@ const About = () => {
                     About Me
                 </h2>
                 <div className='max-w-4xl mx-auto'>
-                    <p className="text-base sm:text-lg text-gray-300 text-center leading-relaxed px-4 lg:p-0">
+                    <p data-aos="fade-up" className="text-base sm:text-lg text-gray-300 text-center leading-relaxed px-4 lg:p-0">
                         Hello! I'm Lakshay, a passionate Full Stack Java Developer and BCA graduate (2025). I love creating elegant
                         solutions to complex problems and building applications that provide exceptional user experiences. My
                         approach combines technical expertise with creative problem-solving to deliver high-quality, scalable
@@ -18,7 +18,7 @@ const About = () => {
                     </p>
                 </div>
             </div>
-            <div className='py-6 sm:py-8 relative z-10'>
+            <div data-aos="fade-up" className='py-6 sm:py-8 relative z-10'>
                 <TechStackMarquee />
             </div>
         </div>

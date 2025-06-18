@@ -1,11 +1,18 @@
+'use client'
 import About from "@/components/About/About";
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer/Footer";
 import HeroSection from "@/components/Hero section/HeroSection";
 import Projects from "@/components/Projects/Projects";
 import Journey from "@/components/Timeline/Journey";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
     <main>
       <section id="home" className="scroll-mt-4">

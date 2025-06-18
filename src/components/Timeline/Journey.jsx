@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Timeline } from 'primereact/timeline';
+import SpotlightCard from '../Experience/SpotlightCard';
 
 export default function JourneyTimeline() {
   const events = [
@@ -49,7 +50,7 @@ export default function JourneyTimeline() {
   );
 
   const customizedContent = (item) => (
-    <div className='bg-white/10 border border-gray-500 p-4 md:p-4 rounded-xl text-start'>
+    <SpotlightCard className="custom-spotlight-card text-start" spotlightColor="rgba(0, 229, 255, 0.2)">
       <div className="text-lg md:text-2xl font-semibold text-white mb-2">{item.status}</div>
       <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center mb-3'>
         <div className='text-gray-100 w-fit px-2 py-1 md:px-3 md:py-1 rounded-2xl bg-[#6826ce] text-xs md:text-sm'>
@@ -60,7 +61,7 @@ export default function JourneyTimeline() {
         </h4>
       </div>
       <p className='text-gray-300 text-sm md:text-base leading-relaxed'>{item.description}</p>
-    </div>
+</SpotlightCard>
   );
 
   return (
@@ -69,12 +70,12 @@ export default function JourneyTimeline() {
         <h2 className="font-[Bricolage_Grotesque] text-2xl md:text-3xl font-bold text-white tracking-tighter px-3 py-2 md:px-4 md:py-2 bg-[#6826ce] rounded-2xl inline-block">
           My Journey
         </h2>
-        <p className="text-base md:text-lg text-gray-300 mt-2 px-4">
+        <p data-aos="fade-up" className="text-base md:text-lg text-gray-300 mt-2 px-4">
           From education to professional growth - here's my roadmap
         </p>
       </div>
 
-      <div className="card mx-auto bg-transparent max-w-6xl">
+      <div data-aos="fade-up" className="card mx-auto bg-transparent max-w-6xl">
         <Timeline
           value={events}
           align="alternate"

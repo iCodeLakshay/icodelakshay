@@ -12,7 +12,7 @@ const projects = {
     {
       title: "Samvaad",
       description: "Real-time chat application with group chats and direct messaging",
-      image: "/samvaad.png",
+      image: "/Project_Images/samvaad.png",
       tags: ["MERN", "Socket.io", "Zustand"],
       demoLink: "https://samvaad-frontend.onrender.com",
       githubLink: "#",
