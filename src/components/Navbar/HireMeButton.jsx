@@ -1,11 +1,12 @@
 'use client'
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const HireMeButton = ({ size = 'md' }) => {
-
     return (
         <StyledWrapper size={size}>
+            <Link href={'/contact'}>
             <button className="cssbuttons-io-button">
                 Hire me
                 <div className="icon">
@@ -15,6 +16,7 @@ const HireMeButton = ({ size = 'md' }) => {
                     </svg>
                 </div>
             </button>
+            </Link>
         </StyledWrapper>
     );
 };

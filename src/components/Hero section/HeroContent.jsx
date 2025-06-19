@@ -9,8 +9,8 @@ const HeroContent = () => {
         <div id='home' className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
             <div className="flex flex-col justify-center mt-25 lg:mt-0 px-8 lg:ml-auto lg:px-8">
                 <div className="max-w-lg">
-                    <h3 className='font-[Bricolage_Grotesque] text-2xl lg:text-3xl text-gray-300 font-semibold'>Hello Folks, this is</h3>
-                    <h1 className="font-[Bricolage_Grotesque] font-bold text-white mb-2 leading-tight">
+                    <h3 className='font-[Bricolage_Grotesque] text-2xl lg:text-3xl text-gray-300 font-semibold'>Hello <span className='bg-[#6826ce] px-1 py-1 rounded-lg'>Folks,</span> this is</h3>
+                    <h1 className="font-[Bricolage_Grotesque] mt-2 font-bold text-white mb-2 leading-tight">
                         <BlurText
                             text="Lakshay Saxena"
                             delay={150}
@@ -20,7 +20,7 @@ const HeroContent = () => {
                         />
                     </h1>
 
-                    <h2 className="font-[Bricolage_Grotesque] flex gap-3 text-lg lg:text-3xl text-gray-300 mb-4 font-semibold">
+                    <h2 className="font-[Bricolage_Grotesque] flex gap-3 text-lg lg:text-3xl text-gray-300 mb-2 font-semibold">
                         <RotatingText
                             texts={['Java Full Stack Developer', 'MERN Full Stack Developer']}
                             mainClassName="sm:px-2 md:px-3 [background-image:radial-gradient(circle,_transparent)] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"

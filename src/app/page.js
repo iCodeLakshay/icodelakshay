@@ -31,6 +31,7 @@ export default function Home() {
         <Journey />
       </section>
       <Footer />
+
     </main>
   );
 }

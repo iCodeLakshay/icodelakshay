@@ -9,12 +9,9 @@ const About = () => {
                 <h2 className="font-[Bricolage_Grotesque] text-2xl sm:text-3xl w-fit mx-auto font-bold text-white px-4 py-2 rounded-2xl mb-4 bg-[#6826ce]">
                     About Me
                 </h2>
-                <div className='max-w-4xl mx-auto'>
+                <div className='max-w-4xl mx-auto flex-wrap mt-8'>
                     <p data-aos="fade-up" className="text-base sm:text-lg text-gray-300 text-center leading-relaxed px-4 lg:p-0">
-                        Hello! I'm Lakshay, a passionate Full Stack Java Developer and BCA graduate (2025). I love creating elegant
-                        solutions to complex problems and building applications that provide exceptional user experiences. My
-                        approach combines technical expertise with creative problem-solving to deliver high-quality, scalable
-                        software.
+                        Hello! I'm Lakshay, a dedicated Full Stack Web Developer and BCA graduate (2025). I&#39;ve built and optimized <span className='bg-[#6826ce] px-1 py-1 rounded-lg'> 20+ real-world projects</span>, including full-stack applications like <span className='bg-[#6826ce] px-1 py-1 rounded-lg'>LMS platforms</span> and <span className='bg-[#6826ce] px-1 py-1 rounded-lg'>admin dashboards.</span> I focus on enhancing UI/UX, improving performance, and <span className='bg-[#6826ce] px-1 py-1 rounded-lg'>delivering scalable, high-quality solutions</span> through a blend of technical skills and practical experience.
                     </p>
                 </div>
             </div>

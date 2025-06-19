@@ -10,11 +10,11 @@ const Menubar = ({ isMobile = false, onItemClick }) => {
     const [activeItem, setActiveItem] = useState('home');
 
     const navItems = [
-        { id: 'home', icon: GoHomeFill, label: 'Home', href: '#home' },
-        { id: 'project', icon: IoRocket, label: 'Project', href: '#project' },
-        { id: 'about', icon: FaCircleInfo, label: 'About', href: '#about' },
-        { id: 'experience', icon: FaMedal, label: 'Experience', href: '#experience' },
-        { id: 'timeline', icon: TbTimeline, label: 'Timeline', href: '#timeline' },
+        { id: 'home', icon: GoHomeFill, label: 'Home', href: '/#home' },
+        { id: 'project', icon: IoRocket, label: 'Project', href: '/#project' },
+        { id: 'about', icon: FaCircleInfo, label: 'About', href: '/#about' },
+        { id: 'experience', icon: FaMedal, label: 'Experience', href: '/#experience' },
+        { id: 'timeline', icon: TbTimeline, label: 'Timeline', href: '/#timeline' },
     ];
 
     const handleItemClick = (itemId) => {

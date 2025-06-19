@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import HireMeButton from './HireMeButton'
 import Menubar from './Menubar'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,9 +18,11 @@ const Navbar = () => {
                 <div className="hidden md:flex justify-between items-center w-[85vw] mx-auto my-3
                       backdrop-blur-md bg-white/10 border border-white/20 
                       shadow-md rounded-xl px-6 py-3">
-                    <div>
-                        <Image src="/logo.svg" width={50} height={50} alt="Logo" />
-                    </div>
+                    <Link href={'/'}>
+                        <div>
+                            <Image src="/logo.svg" width={50} height={50} alt="Logo" />
+                        </div>
+                    </Link>
                     <div className="hidden lg:block">
                         <Menubar />
                     </div>
@@ -32,13 +35,14 @@ const Navbar = () => {
                 <div className="md:hidden flex justify-between items-center w-[95vw] mx-auto my-3
                       backdrop-blur-md bg-white/10 border border-white/20 
                       shadow-md rounded-xl px-4 py-3">
-                    <div>
-                        <Image src="/logo.svg" width={40} height={40} alt="Logo" />
-                    </div>
-                    <div className="flex items-center space-x-3">
-                        <HireMeButton size='md'/>
-
-                    </div>
+                    <Link href={'/'}>
+                        <div>
+                            <Image src="/logo.svg" width={50} height={50} alt="Logo" />
+                        </div>
+                    </Link>
+                        <div className="flex items-center space-x-3">
+                            <HireMeButton size='md' />
+                        </div>
                 </div>
             </div>
 

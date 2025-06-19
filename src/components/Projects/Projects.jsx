@@ -22,7 +22,7 @@ const projects = {
     {
       title: "Crypto Flux",
       description: "Cryptocurrency tracking platform with real-time price updates",
-      image: "/cryptoflux.png",
+      image: "/Project_Images/cryptoflux.png",
       tags: ["Next.js", "Radix UI", "Zustand", "Coingecko API"],
       demoLink: "https://crypto-flux-lime.vercel.app/",
       githubLink: "#",
@@ -30,7 +30,7 @@ const projects = {
     {
       title: "Movie Recommendation",
       description: "Movie recommendation site with personalized suggestions",
-      image: "/movieSS.png",
+      image: "/Project_Images/movieSS.png",
       tags: ["React.js", "TMDB API"],
       demoLink: "https://movie-site-react-one.vercel.app/",
       githubLink: "#",
