@@ -16,7 +16,7 @@ const socialLinks = {
     <div className="w-full h-fit flex justify-center mt-6">
       <div className="flex">
         {/* X button */}
-        <Link href={socialLinks.x}>
+        <Link href={socialLinks.x} target='_blank'>
           <div className="social-icon-container group mx-1.5">
             <button className="social-button">
               <Image src={'/logos/twitter.svg'} width={50} height={50} alt='twitter' className='size-4'/>
@@ -25,7 +25,7 @@ const socialLinks = {
         </Link>
 
         {/* Instagram button */}
-        <Link href={socialLinks.instagram}>
+        <Link href={socialLinks.instagram} target='_blank'>
           <div className="social-icon-container group mx-1.5">
             <button className="social-button">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#ff00ff">
@@ -36,7 +36,7 @@ const socialLinks = {
         </Link>
 
         {/* Github button */}
-        <Link href={socialLinks.github}>
+        <Link href={socialLinks.github} target='_blank'>
           <div className="social-icon-container group mx-1.5">
             <button className="social-button">
               <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 496 512" className="w-5 h-5">

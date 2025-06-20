@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import HeroSectionBG from '../Hero section/HeroSectionBG';
 import toast from 'react-hot-toast';
+import Navbar from '../Navbar/Navbar';
 
 export default function Contact() {
     const [IsSubmitting, setIsSubmitting] = useState(false);
@@ -11,9 +12,8 @@ const handleSubmit = async (e) => {
     setIsSubmitting(true);
 
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries()); // 👈 Converts it to plain JS object
+    const data = Object.fromEntries(formData.entries());
 
-    // Add your Web3Forms access key here manually
     data.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
     try {
@@ -43,6 +43,7 @@ const handleSubmit = async (e) => {
 
     return (
         <div className="min-h-screen relative pt-16 sm:pt-25" style={{ background: "radial-gradient(ellipse at bottom, #2b1055 0%, #000000 100%)" }}>
+            <Navbar />
             <HeroSectionBG />
             <div  data-aos="zoom-in-up" className="relative z-10 max-w-4xl mx-auto mt-4">
                 <h2 className="font-[Bricolage_Grotesque] text-2xl sm:text-3xl w-fit mx-auto font-bold text-white px-4 py-2 rounded-2xl mb-4 bg-[#6826ce]">

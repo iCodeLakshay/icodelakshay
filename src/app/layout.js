@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
 import { Bricolage_Grotesque } from 'next/font/google'
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -36,7 +35,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${bricolage.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        
         <PrimeReactProvider>
           {children}
         </PrimeReactProvider>

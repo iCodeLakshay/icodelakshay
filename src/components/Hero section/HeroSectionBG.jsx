@@ -5,11 +5,11 @@ const HeroSectionBG = () => {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const generatedStars = Array.from({ length: 5 }, (_, i) => {
+    const generatedStars = Array.from({ length: 3 }, (_, i) => {
       const starTailLength = Math.random() * 2.5 + 5; // 5em to 7.5em
       const topOffset = Math.random() * 100; // 0vh to 100vh
       const fallDuration = Math.random() * 10 + 6; // 6s to 12s
-      const fallDelay = Math.random() * 10; // 0s to 10s
+      const fallDelay = Math.random() * 20 + 10; // 0s to 10s
       
       return {
         id: i,
