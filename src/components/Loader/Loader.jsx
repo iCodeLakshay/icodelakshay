@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <div className='min-w-screen min-h-screen my-auto' style={{ background: "radial-gradient(ellipse at top, #2b1055 0%, #000000 100%)" }}>
         <h1
-  className="font-[Bricolage_Grotesque] text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a084ee] via-[#6826ce] to-[#2b1055] drop-shadow-lg tracking-tight text-center animate-pulse pt-36 pb-5"
+  className="font-[Bricolage_Grotesque] text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a084ee] via-[#6826ce] to-[#2b1055] drop-shadow-lg tracking-tight text-center animate-pulse pt-20 md:pt-30 lg:pt-36 lg:pb-5"
 >
   You're entering into another dimension...
 </h1>

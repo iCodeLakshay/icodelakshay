@@ -45,12 +45,12 @@ const handleSubmit = async (e) => {
         <div className="min-h-screen relative pt-16 sm:pt-25" style={{ background: "radial-gradient(ellipse at bottom, #2b1055 0%, #000000 100%)" }}>
             <Navbar />
             <HeroSectionBG />
-            <div  data-aos="zoom-in-up" className="relative z-10 max-w-4xl mx-auto mt-4">
+            <div  data-aos="zoom-in-up" className="relative z-10 max-w-7xl mx-auto lg:mt-4 mt-8 pb-25 lg:p-0">
                 <h2 className="font-[Bricolage_Grotesque] text-2xl sm:text-3xl w-fit mx-auto font-bold text-white px-4 py-2 rounded-2xl mb-4 bg-[#6826ce]">
                     Get In Touch
                 </h2>
 
-                <div className="w-full max-w-md mx-auto">
+                <div className="w-sm md:w-5xl lg:w-full max-w-md mx-auto">
                     <div className="backdrop-blur-sm bg-white/10 border border-white/20 p-8 rounded-2xl shadow-xl">
                         <form onSubmit={handleSubmit} className="flex flex-col gap-6">            
                             <div>
