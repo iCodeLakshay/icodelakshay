@@ -6,30 +6,37 @@ const Loader = () => {
   return (
     <div className='min-w-screen min-h-screen my-auto' style={{ background: "radial-gradient(ellipse at top, #2b1055 0%, #000000 100%)" }}>
         <h1
-  className="font-[Bricolage_Grotesque] text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a084ee] via-[#6826ce] to-[#2b1055] drop-shadow-lg tracking-tight text-center animate-pulse pt-20 md:pt-30 lg:pt-36 lg:pb-5"
->
-  You're entering into another dimension...
-</h1>
-    <StyledWrapper>
-      <div className="mainWrap">
-        <div className="wrapper">
-          <div className="c1">
-            <div className="c2">
-              <div className="c3">
-                <div className="rect1">
-                  <div className="miniC" />
-                  <div className="c4">
-                    <div className="rect2"><div className="rect3" /></div>
+          className="font-[Bricolage_Grotesque] text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a084ee] via-[#6826ce] to-[#2b1055] drop-shadow-lg tracking-tight text-center animate-pulse pt-20 md:pt-30 lg:pt-36 lg:pb-5"
+        >
+          You&apos;re entering into another dimension...
+        </h1>
+        <StyledWrapper>
+          <div className="mainWrap">
+            <div className="wrapper">
+              <div className="c1">
+                <div className="c2">
+                  <div className="c3">
+                    <div className="rect1">
+                      <div className="miniC">
+                        <div className="miniC1" />
+                        <div className="miniC2" />
+                        <div className="miniC3" />
+                        <div className="miniC4" />
+                      </div>
+                      <div className="c4">
+                        <div className="rect2">
+                          <div className="rect3" />
+                        </div>
+                      </div>
+                      <div className="c5" />
+                      <div className="c6" />
+                    </div>
                   </div>
-                  <div className="c5" />
-                  <div className="c6" />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </StyledWrapper>
+        </StyledWrapper>
     </div>
   );
 }
@@ -41,7 +48,7 @@ const StyledWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    perspective: 1000px; /* Perspective for 3D effect */
+    perspective: 1000px;
   }
 
   .mainWrap div {
@@ -57,18 +64,16 @@ const StyledWrapper = styled.div`
     height: 200px;
     width: 200px;
     border: 1px solid #e7b439;
-    animation:
-      rotFirst 30s linear infinite,
-      fadeIn 2s forwards; /* Added fade-in animation */
-    transform: rotateX(10deg) rotateY(10deg); /* 3D perspective */
-    transform-style: preserve-3d; /* Enable 3D transforms */
+    animation: rotFirst 30s linear infinite, fadeIn 2s forwards;
+    transform: rotateX(10deg) rotateY(10deg);
+    transform-style: preserve-3d;
   }
 
   .c1 .c2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     border-radius: 100%;
     height: 190px;
     width: 190px;
@@ -80,7 +85,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     border: 1px solid #ffb61e;
     height: 180px;
     width: 180px;
@@ -94,7 +99,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     height: 120px;
     width: 120px;
   }
@@ -106,19 +111,11 @@ const StyledWrapper = styled.div`
     position: relative;
   }
 
-  .c1 .c2 .c3 .rect1 .miniC .box {
-    height: 10px;
-    width: 10px;
-    border: 1px solid #ffb61e;
-    border-radius: 100%;
-    margin: 4px;
-  }
-
   .c1 .c2 .c3 .rect1 .miniC .miniC1 {
     position: absolute;
     top: -12%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     height: 20px;
     width: 20px;
     border: 3px solid #ffb61e;
@@ -130,7 +127,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: -12%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     height: 20px;
     width: 20px;
     border: 3px solid #ffb61e;
@@ -142,7 +139,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 112%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     height: 20px;
     width: 20px;
     border: 3px solid #ffb61e;
@@ -154,7 +151,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 112%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     height: 20px;
     width: 20px;
     border: 3px solid #ffb61e;
@@ -169,7 +166,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     border-radius: 100%;
     border-style: dotted;
     animation: changeColor 30s linear infinite;
@@ -183,7 +180,7 @@ const StyledWrapper = styled.div`
     animation: rotminiC 10s linear infinite;
   }
 
-  .c1 .c2 .c3 .rect1 .c4 .rect3 {
+  .c1 .c2 .c3 .rect1 .c4 .rect2 .rect3 {
     border: 1px solid #ffb61e;
     height: 80px;
     width: 80px;
@@ -198,7 +195,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     border-radius: 100%;
     animation: changeColor 30s linear infinite;
   }
@@ -211,7 +208,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg); /* 3D perspective */
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(10deg);
     border-radius: 100%;
   }
 
@@ -221,18 +218,16 @@ const StyledWrapper = styled.div`
   .c1 .c2 .c3:hover {
     box-shadow: 0 0 20px #efb61e;
     cursor: pointer;
-    transition:
-      transform 0.5s ease-in-out,
-      box-shadow 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   }
 
   /* Keyframes */
   @keyframes rotFirst {
     0% {
-      transform: rotate(-360deg);
+      transform: rotateX(10deg) rotateY(10deg) rotate(-360deg);
     }
     100% {
-      transform: rotate(0deg);
+      transform: rotateX(10deg) rotateY(10deg) rotate(0deg);
     }
   }
 
@@ -248,11 +243,18 @@ const StyledWrapper = styled.div`
   @keyframes changeColor {
     0% {
       box-shadow: 0px 0px 70px #fa9542;
-      border: 3px solid #fa9642;
+      border-color: #fa9642;
+    }
+    50% {
+      box-shadow: 0px 0px 50px #ffb61e;
+      border-color: #ffb61e;
+    }
+    100% {
+      box-shadow: 0px 0px 70px #fa9542;
+      border-color: #fa9642;
     }
   }
 
-  /* Fade-in animation for loading phase */
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -260,6 +262,7 @@ const StyledWrapper = styled.div`
     100% {
       opacity: 1;
     }
-  }`;
+  }
+`;
 
 export default Loader;
