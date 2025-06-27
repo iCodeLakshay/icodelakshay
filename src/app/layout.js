@@ -6,6 +6,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next"
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
           {children}
         </PrimeReactProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
