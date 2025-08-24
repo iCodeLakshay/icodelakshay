@@ -3,90 +3,114 @@ import React, { useState } from 'react'
 import HeroSectionBG from '../Hero section/HeroSectionBG';
 import toast from 'react-hot-toast';
 import Navbar from '../Navbar/Navbar';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Contact() {
     const [IsSubmitting, setIsSubmitting] = useState(false);
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
-    data.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+        data.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
-    try {
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
 
-        const result = await res.json();
-        if(result.success){
-            toast.success("Message sent successfully !");
-            e.target.reset();
-        }else{
-            toast.error("Failed to send message")
+            const result = await res.json();
+            if (result.success) {
+                toast.success("Message sent successfully !");
+                e.target.reset();
+            } else {
+                toast.error("Failed to send message")
+            }
+
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            toast.error("Something went wrong");
+        } finally {
+            setIsSubmitting(false);
         }
-
-    } catch (error) {
-        console.error("Error submitting form:", error);
-        toast.error("Something went wrong");
-    } finally {
-        setIsSubmitting(false);
-    }
-};
+    };
 
     return (
         <div className="min-h-screen relative pt-16 sm:pt-25" style={{ background: "radial-gradient(ellipse at bottom, #2b1055 0%, #000000 100%)" }}>
             <Navbar />
             <HeroSectionBG />
-            <div  data-aos="zoom-in-up" className="relative z-10 max-w-7xl mx-auto lg:mt-4 mt-8 pb-25 lg:p-0">
+            <div data-aos="zoom-in-up" className="relative z-10 max-w-7xl mx-auto lg:mt-4 mt-8 pb-25 lg:p-0">
                 <h2 className="font-[Bricolage_Grotesque] text-2xl sm:text-3xl w-fit mx-auto font-bold text-white px-4 py-2 rounded-2xl mb-4 bg-[#6826ce]">
                     Get In Touch
                 </h2>
 
-                <div className="w-sm md:w-5xl lg:w-full max-w-md mx-auto">
+                <div className="w-sm md:w-2xl lg:w-5xl mx-auto">
                     <div className="backdrop-blur-sm bg-white/10 border border-white/20 p-8 rounded-2xl shadow-xl">
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-6">            
-                            <div>
-                            <label htmlFor="name" className="text-sm text-gray-300 ml-2 mb-1 block">Your Name</label>
-                            <input
-                                className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors"
-                                type="text"
-                                name="full_name"
-                                
-                                placeholder="Enter your name"
-                                
-                            />
-                        </div>
 
-                            <div>
-                                <label htmlFor="email" className="text-sm text-gray-300 ml-2 mb-1 block">Your Email</label>
-                                <input
-                                    className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors"
-                                    type="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                />
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+                                <div>
+                                    <label htmlFor="name" className="text-sm text-gray-300 ml-2 mb-1 block">Your Name</label>
+                                    <input
+                                        className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors"
+                                        type="text"
+                                        name="full_name"
+                                        placeholder="Enter your name"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="email" className="text-sm text-gray-300 ml-2 mb-1 block">Your Email</label>
+                                    <input
+                                        className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors"
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                    />
+                                </div>
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="text-sm text-gray-300 ml-2 mb-1 block">Message</label>
                                 <textarea
-                                    className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors min-h-[120px]"
+                                    className="w-full bg-white/10 border border-white/20 p-3 rounded-xl outline-none text-white placeholder-gray-400 focus:border-[#6826ce] transition-colors min-h-[100px]"
                                     name="message"
                                     placeholder="Enter your message"
                                 ></textarea>
                             </div>
+                            <div className=" flex flex-col sm:flex-row justify-center gap-4">
+                                <Link
+                                    href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw"
+                                    data-screen-name="@icodelakshay"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center bg-white/20 justify-center gap-2 text-sm backdrop-blur-lg px-6 py-1 rounded-sm text-white font-medium transition-all duration-300 border border-white/10"
+                                >
+                                    Chat on <Image src={"/logos/twitter.svg"} alt='twitter logo' width={14} height={14} />
+                                </Link>
+                                <Link
+                                    href="https://instagram.com/your-handle"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center bg-white/20 justify-center gap-2 text-sm backdrop-blur-lg px-6 py-1 rounded-sm text-white font-medium transition-all duration-300 border border-white/10"
+                                >
+
+                                    Chat on <Image src="/logos/instagram.svg" width={18} height={18} alt='instagram logo' />
+                                </Link>
+                            </div>
 
                             <button type='submit' className="bg-[#6826ce] w-full sm:w-1/2 mx-auto px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 hover:bg-[#7b3ad3] focus:ring-2 focus:ring-[#6826ce] focus:ring-offset-2 focus:ring-offset-[#2b1055] focus:outline-none">
-                                {IsSubmitting ? "Sending..." :"Send Message"}
+                                {IsSubmitting ? "Sending..." : "Send Message"}
                             </button>
+
                         </form>
                     </div>
                 </div>
@@ -94,3 +118,4 @@ const handleSubmit = async (e) => {
         </div>
     );
 }
+{/* <a href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw" class="twitter-dm-button" data-screen-name="icodelakshay" data-show-count="false">Message @icodelakshay</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */}

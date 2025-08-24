@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="w-[85vw] mx-auto backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-8 py-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="space-y-4">
-                        <Image src="/logo.svg" width={50} height={50} alt="Logo" />
+                        <Image src="/logo.svg" width={150} height={150} alt="Logo" />
                         <p className="text-gray-300 text-sm max-w-xs">
                             Full Stack Developer passionate about creating beautiful and functional web applications.
                         </p>

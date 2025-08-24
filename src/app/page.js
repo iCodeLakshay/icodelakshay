@@ -19,14 +19,14 @@ export default function Home() {
     
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000)
+    }, 1000)
   
     return () => clearTimeout(timer);
   },[])
   return (
     <>
     {loading ? <Loader />: (
-    <main>
+    <main className="font-[Bricolage_Grotesque]">
       <Navbar />
       <section id="home" className="scroll-mt-4">
         <HeroSection />

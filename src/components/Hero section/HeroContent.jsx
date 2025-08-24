@@ -1,8 +1,10 @@
 'use client'
 import React from 'react';
 import BlurText from './BlurText/BlurText';
-import RotatingText from './Text Animation/TextAnimate';
 import Earth from './Globe/Globe';
+import { IoDocumentOutline } from "react-icons/io5";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const HeroContent = () => {
     return (
@@ -10,7 +12,7 @@ const HeroContent = () => {
             <div className="flex flex-col justify-center mt-25 lg:mt-0 px-8 lg:ml-auto lg:px-8">
                 <div className="max-w-lg">
                     <h3 className='font-[Bricolage_Grotesque] text-2xl lg:text-3xl text-gray-300 font-semibold'>Hello <span className='bg-[#6826ce] px-1 py-1 rounded-lg'>Folks,</span> this is</h3>
-                    <h1 className="font-[Bricolage_Grotesque] mt-2 font-bold text-white mb-2 leading-tight">
+                    <h1 className=" mt-2 font-bold text-white mb-2 leading-tight">
                         <BlurText
                             text="Lakshay Saxena"
                             delay={150}
@@ -20,25 +22,17 @@ const HeroContent = () => {
                         />
                     </h1>
 
-                    <h2 className="font-[Bricolage_Grotesque] flex gap-3 text-lg lg:text-3xl text-gray-300 mb-2 font-semibold">
-                        <RotatingText
-                            texts={['Java Full Stack Developer', 'MERN Full Stack Developer']}
-                            mainClassName="sm:px-2 md:px-3 [background-image:radial-gradient(circle,_transparent)] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                            staggerFrom={"last"}
-                            initial={{ y: "100%" }}
-                            animate={{ y: 0 }}
-                            exit={{ y: "-120%" }}
-                            staggerDuration={0.025}
-                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                            rotationInterval={3000}
-                        />
-                    </h2>
-
                     <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                        Specializing in MERN Stack and Java development,
-                        crafting scalable digital solutions with precision and innovation.
+                        Full-stack developer in his 20s, building scalable, innovative solutions with a strategist’s mind. Passionate about coding, chess, books, philosophy, and awakening.
                     </p>
+                    <div className='flex flex-col lg:flex-row gap-4'>
+                        <Link target='_blank' href="https://x.com/intent/follow?screen_name=icodelakshay" className="inline-flex items-center justify-center px-5 py-2 bg-[#6826ce] text-white rounded-lg hover:bg-[#5a1fba] transition-colors duration-300">
+                            Connect on <span className='ml-2'><Image src="/logos/twitter.svg" alt="Twitter Logo" width={12} height={12} /></span>
+                        </Link>
+                        <Link href="/CV [Lakshay].pdf" target='_blank' className="inline-flex items-center justify-center px-5 py-2 bg-[#6826ce] text-white rounded-lg hover:bg-[#5a1fba] transition-colors duration-300">
+                            Get my CV <span className='ml-2'><IoDocumentOutline className='text-black' /></span>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

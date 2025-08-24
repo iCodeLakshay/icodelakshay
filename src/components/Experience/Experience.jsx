@@ -61,7 +61,7 @@ export default function Experience() {
                 variants={item}
                 className="group relative overflow-hidden rounded-lg border shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <SpotlightCard key={index} className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                <SpotlightCard key={index} className="custom-spotlight-card" spotlightColor="rgba(255, 255, 255, 0.15)">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="flex-1">
                       <h3 className="font-[Bricolage_Grotesque] text-xl text-gray-50 font-semibold mb-1">

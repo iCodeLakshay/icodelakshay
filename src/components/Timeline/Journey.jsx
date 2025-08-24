@@ -50,7 +50,7 @@ export default function JourneyTimeline() {
   );
 
   const customizedContent = (item) => (
-    <SpotlightCard className="custom-spotlight-card text-start" spotlightColor="rgba(0, 229, 255, 0.2)">
+    <SpotlightCard className="custom-spotlight-card text-start" spotlightColor="rgba(255, 255, 255, 0.1)">
       <div className="text-lg md:text-2xl font-semibold text-white mb-2">{item.status}</div>
       <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center mb-3'>
         <div className='text-gray-100 w-fit px-2 py-1 md:px-3 md:py-1 rounded-2xl bg-[#6826ce] text-xs md:text-sm'>

@@ -20,7 +20,7 @@ const Navbar = () => {
                       shadow-md rounded-xl px-6 py-3">
                     <Link href={'/'}>
                         <div>
-                            <Image src="/logo.svg" width={50} height={50} alt="Logo" />
+                            <Image src="/logo.svg" width={150} height={150} alt="Logo" />
                         </div>
                     </Link>
                     <div className="hidden lg:block">
@@ -37,7 +37,7 @@ const Navbar = () => {
                       shadow-md rounded-xl px-4 py-3">
                     <Link href={'/'}>
                         <div>
-                            <Image src="/logo.svg" width={50} height={50} alt="Logo" />
+                            <Image src="/logo.svg" width={100} height={100} alt="Logo" />
                         </div>
                     </Link>
                         <div className="flex items-center space-x-3">
