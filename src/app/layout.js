@@ -26,10 +26,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "iCodeLakshay - Portfolio",
+  title: "iCodeLakshay - Professional Portfolio",
   description: "Portfolio website by Lakshay",
     icons: {
-    icon: "/logo-dark.svg",
+    icon: "/favicon.svg",
   },
 };
 

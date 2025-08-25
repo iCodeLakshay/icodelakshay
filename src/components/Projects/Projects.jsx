@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
@@ -19,7 +19,7 @@ const projects = {
     },
     {
       title: "Samvaad",
-      description: "Real-time chat application with group chats and direct messaging",
+      description: "Real-time chat application with 1 to 1 direct messaging",
       image: "/Project_Images/samvaad.png",
       tags: ["JWT", "Socket.io", "Zustand"],
       demoLink: "https://samvaad-frontend.onrender.com",
@@ -34,10 +34,10 @@ const projects = {
       githubLink: "#",
     },
     {
-      title: "Movie Recommendation",
+      title: "Cine Cove",
       description: "Movie recommendation site with personalized suggestions",
       image: "/Project_Images/movieSS.png",
-      tags: ["React.js", "TMDB API"],
+      tags: ["React.js", "TMDB API", "TailwindCSS"],
       demoLink: "https://movie-site-react-one.vercel.app/",
       githubLink: "#",
     },
@@ -48,7 +48,7 @@ const projects = {
       description: "An Indian tech company delivering scalable software, mobile apps, websites, and digital solutions. With a 35+ member team, we build automation dashboards and industry-specific tools that drive digital growth, efficiency, and innovation for startups, enterprises, and institutions.",
       image: "/Project_Images/jeevijay.png",
       tags: ["GSAP", "Swiper", "WowJS"],
-      demoLink: "https://parivarsaathi.com/",
+      demoLink: "https://jeevijay.com/",
       // githubLink: "#"
     },
     {
@@ -56,7 +56,7 @@ const projects = {
       description: "Like Minded – A collective that unites musicians from all walks of life, including politicians, social servants, and professionals, through Indian classical music. It celebrates diversity by bringing together different perspectives into one soulful harmony. A platform where passion for music transcends boundaries.",
       image: "/Project_Images/likeMinded.png",
       tags: ["NextJs", "Tailwind CSS"],
-      demoLink: "https://parivarsaathi.com/",
+      demoLink: "https://likeminded.vercel.app/",
       // githubLink: "#"
     },
     {
@@ -106,6 +106,11 @@ const projects = {
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("personal")
+  const [visibleCount, setVisibleCount] = useState(6)
+
+  useEffect(() => {
+    setVisibleCount(6)
+  }, [activeTab])
 
   const container = {
     hidden: { opacity: 0 },
@@ -146,19 +151,19 @@ export default function Projects() {
         <div className="w-full max-w-4xl mx-auto">
           <div className="flex justify-center mb-8">
             <div className="inline-flex bg-black h-10 items-center justify-center rounded-md bg-muted p-2 text-muted-foreground grid-cols-2 md:grid-cols-4" onClick={handleTabClick}>
-              <button 
+              <button
                 className={`inline-flex text-gray-300 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === 'personal' ? 'bg-[#6826ce] text-black shadow-sm' : ''}`}
                 data-value="personal"
               >
                 Personal
               </button>
-              <button 
+              <button
                 className={`inline-flex text-gray-300 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === 'featured' ? 'bg-[#6826ce] text-black shadow-sm' : ''}`}
                 data-value="featured"
               >
                 Featured
               </button>
-              <button 
+              <button
                 className={`inline-flex text-gray-300 items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === 'upcoming' ? 'bg-[#6826ce] text-black shadow-sm' : ''}`}
                 data-value="upcoming"
               >
@@ -167,62 +172,77 @@ export default function Projects() {
             </div>
           </div>
 
-          {Object.keys(projects).map((category) => (
+          {Object.keys(projects).map((category, i) => (
             activeTab === category && (
-              <motion.div
-                key={category}
-                variants={container}
-                initial="hidden"
-                animate="show"
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-              >
-                {projects[category].map((project, index) => (
-                  <motion.div
-                    key={index}
-                    variants={item}
-                    className="project-card group w-xs mx-auto lg:w-auto relative overflow-hidden rounded-lg border shadow-md hover:shadow-lg transition-shadow duration-300"
-                  >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-70 transition-opacity z-10" />
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-fill transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {project.upcoming && (
-                    <div className="absolute top-2 right-2 bg-[#6826ce] text-white text-xs font-medium px-2 py-1 rounded-full z-20">
-                      Coming Soon
-                    </div>
-                  )}
-                </div>
-
-                <div className="p-6 h-auto bg-white/10 backdrop-blur-md border border-white/20">
-                  <h3 className="font-[Bricolage_Grotesque] text-xl text-gray-50 font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-300  text-sm mb-4 leading-relaxed line-clamp-2">{project.description}</p>
-
-                  <div className="flex  flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <div key={tag} className="text-xs bg-[#6826ce] px-2 py-1 rounded-2xl text-gray-100">
-                        {tag}
+              <div key={i}>
+                <motion.div
+                  key={category}
+                  variants={container}
+                  initial="hidden"
+                  animate="show"
+                  className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                  {projects[category].slice(0, visibleCount).map((project, index) => (
+                    <motion.div
+                      key={index}
+                      variants={item}
+                      className="project-card group w-xs mx-auto lg:w-auto relative overflow-hidden rounded-lg border shadow-md hover:shadow-lg transition-shadow duration-300"
+                    >
+                      <div className="relative h-48 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-70 transition-opacity z-10" />
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          fill
+                          className="object-fill transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {project.upcoming && (
+                          <div className="absolute top-2 right-2 bg-[#6826ce] text-white text-xs font-medium px-2 py-1 rounded-full z-20">
+                            Coming Soon
+                          </div>
+                        )}
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="flex gap-3 text-gray-50">
-                    {project.demoLink && (<Link href={project.demoLink} target="_blank" className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
-                      Demo 
-                      <HiArrowUpRight className="ml-1 h-3 w-3" /> 
-                    </Link>)}
-                    {project.githubLink && (<Link href={project.githubLink} className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
-                      <FaGithub className="mr-1 h-3 w-3" />
-                      Code
-                    </Link>)}
+                      <div className="p-6 min-h-62 bg-white/10 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+                        <div>
+
+                          <h3 className="font-[Bricolage_Grotesque] text-xl text-gray-50 font-semibold mb-2">{project.title}</h3>
+                          <p className="text-gray-300  text-sm mb-4 leading-relaxed line-clamp-2">{project.description}</p>
+
+                          <div className="flex  flex-wrap gap-2 mb-4">
+                            {project.tags.map((tag) => (
+                              <div key={tag} className="text-xs bg-[#6826ce] px-2 py-1 rounded-2xl text-gray-100">
+                                {tag}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3 text-gray-50">
+                          {project.demoLink && (<Link href={project.demoLink} target="_blank" className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
+                            Visit Site
+                            <HiArrowUpRight className="ml-1 h-3 w-3" />
+                          </Link>)}
+                          {project.githubLink && (<Link href={project.githubLink} className="inline-flex items-center justify-center rounded-md text-sm font-medium py-1 px-2 border border-gray-50">
+                            <FaGithub className="mr-1 h-3 w-3" />
+                            Code
+                          </Link>)}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+                {visibleCount < projects[category].length && (
+                  <div className="flex justify-center mt-8">
+                    <button
+                      className="bg-[#6826ce] text-white px-6 py-2 rounded-xl font-medium shadow hover:bg-[#7c3aed] transition-all duration-300"
+                      onClick={() => setVisibleCount((prev) => prev + 3)}
+                    >
+                      View More
+                    </button>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                )}
+              </div>
             )
           ))}
         </div>

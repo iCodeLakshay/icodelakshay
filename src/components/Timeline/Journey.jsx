@@ -7,20 +7,12 @@ import SpotlightCard from '../Experience/SpotlightCard';
 export default function JourneyTimeline() {
   const events = [
     {
-      status: 'Secondary Education Completed',
-      date: '2018 - 2022',
-      icon: 'pi pi-book',
-      color: '#10B981',
-      subtitle: 'PCM',
-      description: 'Successfully completed my secondary education with a focus on science subjects...',
-    },
-    {
-      status: 'Bachelor of Computer Applications',
-      date: '2022 - 2025',
-      icon: 'pi pi-briefcase',
-      color: '#3B82F6',
-      subtitle: 'BCA Degree',
-      description: 'Pursued comprehensive education in computer science fundamentals...',
+      status: 'Future Goals',
+      date: 'Beyond 2025',
+      icon: 'pi pi-star',
+      color: '#F59E0B',
+      subtitle: 'Expanding Horizons',
+      description: 'Committed to continuous learning and contributing to meaningful innovations...',
     },
     {
       status: 'Web Developer',
@@ -28,16 +20,24 @@ export default function JourneyTimeline() {
       icon: 'pi pi-code',
       color: '#8B5CF6',
       subtitle: 'Jee Vijay Technologies',
-      description: 'Started my career as a web developer, working on real-world projects...',
+      description: 'Started my career as a web developer, working on real-world projects which developed the critical thinker out of me.',
     },
     {
-      status: 'Future Goals',
-      date: 'Beyond 2025',
-      icon: 'pi pi-star',
-      color: '#F59E0B',
-      subtitle: 'Expanding Horizons',
-      description: 'Committed to continuous learning and contributing to meaningful innovations...',
-    }
+      status: 'Bachelor of Computer Applications',
+      date: '2022 - 2025',
+      icon: 'pi pi-briefcase',
+      color: '#3B82F6',
+      subtitle: 'BCA Degree',
+      description: 'Later on, Pursued comprehensive education in computer science fundamentals that laid the groundwork for my technical skills and interests.',
+    },
+    {
+      status: 'Secondary Education Completed',
+      date: '2018 - 2022',
+      icon: 'pi pi-book',
+      color: '#10B981',
+      subtitle: 'PCM',
+      description: 'Successfully completed my secondary education with a focus on mathematics but it was not my cup of tea.',
+    },
   ];
 
   const customizedMarker = (item) => (
