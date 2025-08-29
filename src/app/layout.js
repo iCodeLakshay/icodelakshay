@@ -7,6 +7,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
           {children}
         </PrimeReactProvider>
         <Toaster />
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
