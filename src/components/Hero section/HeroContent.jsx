@@ -29,7 +29,7 @@ const HeroContent = () => {
                         <Link target='_blank' href="https://x.com/intent/follow?screen_name=icodelakshay" className="inline-flex items-center justify-center px-5 py-2 bg-[#6826ce] text-white rounded-lg hover:bg-[#5a1fba] transition-colors duration-300">
                             Connect on <span className='ml-2'><Image src="/logos/twitter.svg" alt="Twitter Logo" width={12} height={12} /></span>
                         </Link>
-                        <Link href="/CV [Lakshay].pdf" target='_blank' className="inline-flex items-center justify-center px-5 py-2 bg-[#6826ce] text-white rounded-lg hover:bg-[#5a1fba] transition-colors duration-300">
+                        <Link href="/logos/CV_Lakshay.pdf" target='_blank' className="inline-flex items-center justify-center px-5 py-2 bg-[#6826ce] text-white rounded-lg hover:bg-[#5a1fba] transition-colors duration-300">
                             Get my CV <span className='ml-2'><IoDocumentOutline className='text-black' /></span>
                         </Link>
                     </div>
